@@ -1,0 +1,17 @@
+<div class="container">
+<h1 [style.color]="textColor">Title Style!</h1>
+<div class="array-container">
+    <div 
+        class="paragraph-container" *ngFor="let object of LoremIpsumArray; let i = index"
+        [style.border-color]="textColor === basicColors[i % basicColors.length] ? textColor : 'transparent'"
+        >
+        <div>
+        <p>{{object.title}}</p>
+        <p>{{object.content}}</p>
+        </div>
+        <button (click)="changeColor(i % basicColors.length)"  [style.background-color]="basicColors[i % basicColors.length]">Change color</button>
+    </div>
+
+</div>
+
+</div>
